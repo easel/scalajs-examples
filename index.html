@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>The Scala.js Tutorial</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Include Scala.js compiled code -->
+    <!--<script type="text/javascript" src="./node_modules/systemjs/dist/system.js"></script>-->
+    <script src="https://jspm.io/system@0.19.js"></script>
+    <!-- Run tutorial.webapp.TutorialApp -->
+    <script>
+      // set our baseURL reference path
+      // loads /js/main.js
+      System.config({
+        meta: {
+          '/target/scala-2.11/scala-js-examples-fastopt.js': {
+            format: 'cjs'
+          }
+        }
+      });   
+      SystemJS.import('./target/scala-2.11/scala-js-examples-fastopt.js').then(function(module) {
+          console.log("scala.js code loaded");
+        console.debug(module.ExampleApp);
+        module.ExampleApp().main();
+      }, console.error.bind(console));
+    </script>
+  </body>
+</html>
