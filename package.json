@@ -1,7 +1,14 @@
 {
   "dependencies": {
+    "jspm": "^0.16.46",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "systemjs": "^0.19.39"
+  },
+  "jspm": {
+    "dependencies": {
+      "react": "npm:react@^15.3.2",
+      "react-dom": "npm:react-dom@^15.3.2"
+    }
   }
 }

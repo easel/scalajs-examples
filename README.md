@@ -11,3 +11,13 @@ http-server -c1
 
 Browse to http://localhost:8080/index.html
 
+The build has been configured with a jspm dependency cache as described at 
+http://jspm.io/docs/production-workflows.html. To rebuild the cache,
+run the following commands:
+
+```
+npm install -g jspm-cli
+jspm update
+jspm depCache target/scala-2.11/scala-js-examples-opt.js
+```
+

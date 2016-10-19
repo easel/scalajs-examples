@@ -9,20 +9,13 @@
     <!-- Include Scala.js compiled code -->
     <!--<script type="text/javascript" src="./node_modules/systemjs/dist/system.js"></script>-->
     <script src="https://jspm.io/system@0.19.js"></script>
+    <script src="./config.js"></script>
     <!-- Run tutorial.webapp.TutorialApp -->
     <script>
       // set our baseURL reference path
       // loads /js/main.js
-      System.config({
-        meta: {
-          '/target/scala-2.11/scala-js-examples-fastopt.js': {
-            format: 'cjs'
-          }
-        }
-      });   
-      SystemJS.import('./target/scala-2.11/scala-js-examples-fastopt.js').then(function(module) {
-          console.log("scala.js code loaded");
-        console.debug(module.ExampleApp);
+      SystemJS.import('./target/scala-2.11/scala-js-examples-opt.js').then(function(module) {
+        console.log("scala.js module loaded");
         module.ExampleApp().main();
       }, console.error.bind(console));
     </script>
